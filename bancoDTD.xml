@@ -4,15 +4,16 @@
 
 <!ELEMENT banco (cuentas+, clientes+, clientes_cuentas+)>
 
-<!ELEMENT cuentas(cajas_ahorro | cuentas_corrientes)>
+<!ELEMENT cuentas (cajas_ahorro | cuentas_corrientes)>
 
 <!ELEMENT cajas_ahorro (caja_ahorro+)>
 
 <!ELEMENT caja_ahorro (balance)>
-    <!ATTLIST caja_ahorro
+<!ATTLIST caja_ahorro
         id ID #REQUIRED
         interes PCDATA #REQUIRED
         >
+
 <!ELEMENT cuenta_corrientes (cuenta_corriente+)>
 
 <!ELEMENT balance (#CDATA)>
@@ -26,7 +27,7 @@
 
 <!ELEMENT clientes (cliente+)>
 
-<!ELEMENT cliente(nombre, direccion)>
+<!ELEMENT cliente (nombre, direccion)>
     <!ATTLIST cliente
         id ID #REQUIRED
         >
