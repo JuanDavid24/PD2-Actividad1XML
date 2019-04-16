@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="banco">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="cuentas">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="cajas_ahorro">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="caja_ahorro" type="infoCajaAhorro" minOccurs="0" maxOccurs= "unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="cuentas_corrientes">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="cuenta_corriente" type="infoCuenta" minOccurs="0" maxOccurs= "unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+
+                </xs:complexType>
+            </xs:element>
+            <xs:element name = "clientes">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name= "cliente" type = "infoCliente" minOccurs="0" maxOccurs= "unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name= "clientes_cuentas">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="cliente_cuenta" type="infoClienteCuenta" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:complexType name="infoCuenta">
+    <xs:sequence>
+        <xs:element name="balance" type="xs:double"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID"/>
+</xs:complexType>
+
+
+<xs:complexType name="infoCajaAhorro">
+    <xs:complexContent>
+        <xs:extension base="infoCuenta">
+            <xs:attribute name="interes" type="xs:double"/>
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+
+
+<xs:complexType name="infoCliente">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="direccion" type="xs:string"/>
+        </xs:sequence>
+    <xs:attribute name="id" type="xs:ID"/>
+</xs:complexType>
+
+
+<xs:complexType name="infoClienteCuenta">
+    <xs:attribute name="c_id" type="xs:IDREF"/>
+    <xs:attribute name="cu_id" type="xs:IDREF"/>
+</xs:complexType>
+
+</xs:schema>
