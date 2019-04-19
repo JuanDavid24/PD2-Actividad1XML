@@ -11,4 +11,4 @@ def XMLvsXSD_validate(schemaName, xmlName):
 xml = "banco.xml"
 xsd = "banco.xsd"
 
-print (XMLvsXSD_isValid(xsd, xml))
+print (XMLvsXSD_validate(xsd, xml))
