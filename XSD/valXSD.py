@@ -1,14 +1,14 @@
 import xmlschema
 
-def XMLvsXSD_isValid(schemaName, xmlName):
+def XMLvsXSDIsValid(schemaName, xmlName):
     schema = xmlschema.XMLSchema(schemaName)
     return schema.is_valid(xmlName)
 
-def XMLvsXSD_validate(schemaName, xmlName):
+def XMLvsXSDValidate(schemaName, xmlName):
     schema = xmlschema.XMLSchema(schemaName)
     return schema.validate(xmlName)
 
 xml = "banco.xml"
 xsd = "banco.xsd"
 
-print (XMLvsXSD_validate(xsd, xml))
+print (XMLvsXSDValidate(xsd, xml))
