@@ -62,6 +62,12 @@
         <xs:field xpath="@cu_id" />
     </xs:keyref>
 
+    <xs:unique name="cuentaClienteKey"  >
+        <xs:selector xpath=".//cliente_cuenta" />
+        <xs:field xpath="@c_id"/>
+        <xs:field xpath="@cu_id"/>
+    </xs:unique>
+
 </xs:element>
 
 
