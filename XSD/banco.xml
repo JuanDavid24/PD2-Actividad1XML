@@ -39,6 +39,6 @@
     <cliente_cuenta c_id="c1" cu_id="a3"/>
     <cliente_cuenta c_id="c2" cu_id="a4"/>
     <cliente_cuenta c_id="c3" cu_id="a1"/>
-    <cliente_cuenta c_id="c3" cu_id="a5"/>
+    <cliente_cuenta c_id="c3" cu_id="a4"/>
   </clientes_cuentas>
 </banco>

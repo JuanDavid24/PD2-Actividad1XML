@@ -48,7 +48,7 @@
     </xs:key>
 
     <xs:key name="cuentaKey"  >
-        <xs:selector xpath=".//caja_ahorro|.//cuenta_corriente" />
+        <xs:selector xpath="./cuentas/*/*" />
         <xs:field xpath="@id" />
     </xs:key>
 
