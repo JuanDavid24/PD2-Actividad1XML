@@ -1,8 +1,8 @@
 <banco>
-  <cuentas
+  <cuentas>
     <cajas_ahorro>
       <caja_ahorro id="a1" interes="0.03">
-        <balance>7500</balance>
+        <balance>2500</balance>
       </caja_ahorro>
       <caja_ahorro id="a2" interes="0.03">
         <balance>15075</balance>
@@ -10,13 +10,13 @@
     </cajas_ahorro>
     <cuentas_corrientes>
       <cuenta_corriente id="a3">
-        <balance>5025</balance>
+        <balance>4025</balance>
       </cuenta_corriente>
       <cuenta_corriente id="a4">
-        <balance>11125</balance>
+        <balance>-125</balance>
       </cuenta_corriente>
       <cuenta_corriente id="a5">
-        <balance>5425</balance>
+        <balance>325</balance>
       </cuenta_corriente>
     </cuentas_corrientes>
   </cuentas>

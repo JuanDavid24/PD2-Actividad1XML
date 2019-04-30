@@ -8,6 +8,7 @@ schema2 = "TestFiles/bancoRoto.xsd"
 xml1 = "banco.xml"
 xml2 = "TestFiles/bancoRoto.xml"
 xml3 = "TestFiles/bancoSinTagCuentas.xml"
+xml4 = "TestFiles/bancoBalanceMenor.xml"
 
 def testOk():
     assert valXSD.XMLvsXSDIsValid(schema1, xml1) == True
@@ -22,8 +23,11 @@ def testXSDRoto():
     with pytest.raises(ParseError):
         valXSD.XMLvsXSDIsValid(schema2, xml1)
     pass
+
 def testXMLInvalido():
     assert valXSD.XMLvsXSDIsValid(schema1, xml3) == False
     pass
 
-
+def testXMLBalanceMenor():
+    assert valXSD.XMLvsXSDIsValid(schema1, xml4) == False
+    pass
