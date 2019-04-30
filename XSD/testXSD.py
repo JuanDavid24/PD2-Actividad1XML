@@ -9,6 +9,7 @@ xml1 = "banco.xml"
 xml2 = "TestFiles/bancoRoto.xml"
 xml3 = "TestFiles/bancoSinTagCuentas.xml"
 xml4 = "TestFiles/bancoBalanceMenor.xml"
+xml5 = "TestFiles/bancoIdCuentaRepetida.xml"
 
 def testOk():
     assert valXSD.XMLvsXSDIsValid(schema1, xml1) == True
@@ -31,3 +32,8 @@ def testXMLInvalido():
 def testXMLBalanceMenor():
     assert valXSD.XMLvsXSDIsValid(schema1, xml4) == False
     pass
+
+def testXMLIdCuentaRepetida():
+    assert valXSD.XMLvsXSDIsValid(schema1, xml5) == False
+    pass
+

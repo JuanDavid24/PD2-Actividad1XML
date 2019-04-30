@@ -41,6 +41,27 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:key name="clienteKey"  >
+        <xs:selector xpath=".//cliente" />
+        <xs:field xpath="@id" />
+    </xs:key>
+
+    <xs:key name="cuentaKey"  >
+        <xs:selector xpath=".//caja_ahorro|.//cuenta_corriente" />
+        <xs:field xpath="@id" />
+    </xs:key>
+
+    <xs:keyref name="clienteRef" refer="clienteKey">
+        <xs:selector xpath=".//cliente_cuenta" />
+        <xs:field xpath="@c_id" />
+    </xs:keyref>
+
+    <xs:keyref name="cuentaRef" refer="cuentaKey">
+        <xs:selector xpath=".//cliente_cuenta" />
+        <xs:field xpath="@cu_id" />
+    </xs:keyref>
+
 </xs:element>
 
 
@@ -54,7 +75,7 @@
             </xs:simpleType>
         </xs:element>
     </xs:sequence>
-    <xs:attribute name="id" type="xs:ID"/>
+    <xs:attribute name="id" type="xs:string"/>
 </xs:complexType>
 
 
@@ -72,13 +93,14 @@
             <xs:element name="nombre" type="xs:string"/>
             <xs:element name="direccion" type="xs:string"/>
         </xs:sequence>
-    <xs:attribute name="id" type="xs:ID"/>
+    <xs:attribute name="id" type="xs:string"/>
 </xs:complexType>
 
 
 <xs:complexType name="infoClienteCuenta">
-    <xs:attribute name="c_id" type="xs:IDREF"/>
-    <xs:attribute name="cu_id" type="xs:IDREF"/>
+    <xs:attribute name="c_id" type="xs:string"/>
+    <xs:attribute name="cu_id" type="xs:string"/>
 </xs:complexType>
+
 
 </xs:schema>
